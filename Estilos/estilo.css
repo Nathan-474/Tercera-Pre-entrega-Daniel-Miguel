@@ -1,0 +1,260 @@
+
+
+/* Caracteristicas en General de la Pagina */
+body{
+    background-color: #778da9;
+}
+
+h1{
+    text-align: center;
+    font-family: cursive;
+    color: #0d1b2a;
+}
+
+a{
+    font-family: cursive;
+    text-decoration: none;
+    color:#0d1b2a;
+    margin-left: 10px; 
+}
+
+.caratula{
+         position: absolute;
+         right: 30%;
+         bottom: 10%;
+         
+}
+
+/* Aqui empieza todo de Header */
+li{
+    display: inline-flex;
+
+}
+
+.dropdown-li{
+    position: relative;
+}
+
+.dropdown-li:hover .dropdown{
+    display: block;
+    opacity: 1;
+
+}
+
+.dropdown{
+    background-color: #778da9;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+    display: none; 
+}
+
+.dropdown-li{
+    list-style: none;
+}
+
+/* Aqui empieza la Pagina Inicio */
+.contenedor{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor figure{
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+   height: -550%;
+   width: -450%;
+}
+
+.contenedor figure image{
+    width: 750px;
+    height: 550px;
+    transition: all 500ms ease-out;
+}
+
+.contenedor figure .capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d1b2a;
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+
+.contenedor figure:hover > .capa{
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor figure:hover .capa h1{
+    color: #e0e1dd;
+    font-family: cursive;
+    font-weight: 400;
+    margin-top: 220px;
+    transition: all 500ms ease-out;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.contenedor figure .capa p{
+    color: #e0e1dd;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+    text-transform: uppercase
+}
+/* Aquí sigue lo de la pagina general */
+h2{
+    color: #0d1b2a;
+    text-align: center;
+    font-family: cursive;   
+}
+
+p{
+    font-family: cursive;
+    text-align: center;
+    color: #0d1b2a;
+}
+
+/* Aquí empieza empieza la parte de la pagina de Creador  */
+
+.aston{
+  position: absolute;
+  bottom: auto;
+  right: 10px;
+  text-align: center;
+  font-family: cursive;
+  filter: brightness(20%);
+}
+
+.aston:hover{
+  filter: brightness(100%);
+}
+/* Aqui empieza la parte de la pagina de categorias  */
+.slider{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    bottom: 10cm;
+}
+
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite;
+}
+
+.slider li{
+    list-style: none;
+    width: 100%;  
+}
+
+.slider img{
+    width: 100%;
+    height: 85%;
+    
+}
+
+@keyframes cambio {
+    0% { margin-left: 0;}
+    20% { margin-left: 0;}
+
+    25% { margin-left: -100%;}
+    45% { margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70% { margin-left: -200%;}
+
+    95% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+
+}
+
+/* Aqui empieza la parte de la pagina de Logo */
+
+.container {
+    display: flex;
+    width: 70vw;
+    margin: auto;
+  }
+  
+  .panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    cursor: pointer;
+    flex: 0.5;
+    color: #0d1b2a;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+  }
+  
+  .panel:first-of-type {
+    background-position: 50% 30%;
+  }
+  
+  .panel:nth-of-type(3) {
+    background-position: 80% 10%;
+  }
+  
+  .panel:nth-of-type(5) {
+    background-position: 50% 10%;
+  }
+  
+  .panel h2 {
+    position: absolute;
+    font-size: 24px;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+  }
+  
+  .panel.active {
+    flex: 5;
+  }
+  
+  .panel.active h2 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+        width: 100vw;
+        padding: 0 5px;
+      }
+    
+      .panel {
+        margin: 0 5px;
+      }
+    
+      .panel.active {
+        flex: 4;
+      }
+    
+      .panel:nth-of-type(3) {
+        background-position: 65% 10%;
+      }
+    
+      .panel:nth-of-type(4),
+      .panel:nth-of-type(5) {
+        display: none;
+      }
+  }
+ 
